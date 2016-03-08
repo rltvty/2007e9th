@@ -21,6 +21,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules', 'admin-lte', 'bootstrap')));
+app.use('/dist', express.static(path.join(__dirname, 'node_modules', 'admin-lte', 'dist')));
+app.use('/plugins', express.static(path.join(__dirname, 'node_modules', 'admin-lte', 'plugins')));
+app.use('/font-awesome', express.static(path.join(__dirname, 'node_modules', 'font-awesome')));
 
 app.use('/', routes);
 app.use('/users', users);
